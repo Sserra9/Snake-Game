@@ -20,11 +20,11 @@ pygame.display.set_caption('Snake game by Edureka. Modified by Sean Serra.')
 
 clock = pygame.time.Clock()
 
-snake_block = 10
-snake_speed = 15
+snake_block = 20
+snake_speed = 12
 
 font_style = pygame.font.SysFont("bahnschrift", 25)
-score_font = pygame.font.SysFont("comocsansms", 35)
+score_font = pygame.font.SysFont("bahnschrift", 25)
 
 game_over = False
 game_close = False 
@@ -63,8 +63,8 @@ def game_loop():
     snake_list = []
     length_of_snake = 1
 
-    food_x_coord = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
-    food_y_coord = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
+    food_x_coord = round(random.randrange(0, dis_width - snake_block) / 20.0) * 20.0
+    food_y_coord = round(random.randrange(0, dis_height - snake_block) / 20.0) * 20.0
 
 #This gives the user the option to exit or play again when the player loses.
     while not game_over:
@@ -128,8 +128,8 @@ def game_loop():
         pygame.display.update()
 
         if x1 == food_x_coord and y1 == food_y_coord:
-            food_x_coord = round(random.randrange(0, dis_width - snake_block) / 11.0) * 10.0
-            food_y_coord = round(random.randrange(0, dis_height -snake_block) / 11.0) * 10.0
+            food_x_coord = round(random.randrange(0, dis_width - snake_block) / 20.0) * 20.0
+            food_y_coord = round(random.randrange(0, dis_height -snake_block) / 20.0) * 20.0
             length_of_snake += 1
         
         clock.tick(snake_speed)
